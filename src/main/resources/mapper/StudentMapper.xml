@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jack.dao.StudentDao">
+    <!-- 为DAO接口的方法提供sql语句，id为方法名 -->  
+    <select id="queryStudentById" resultType="Student">
+       select 
+       s.id,
+       s.name,
+       s.sex,
+       s.birthday,
+       d.id "department.id",
+       d.departcode "department.departcode",
+       d.departname "department.departname"
+       from student s,
+       department d
+       where s.departid=d.id
+       and d.id=#{id}
+    </select>   
+    <insert id="insertStudent">
+       insert into student(departid,name,sex,birthday) 
+       values(#{departId},#{name},#{sex},#{birthday})
+    </insert>
+</mapper>
