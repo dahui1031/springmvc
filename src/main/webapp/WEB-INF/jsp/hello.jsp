@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-    ${hello}
+
+      <a href="freeMarker/hi">say hi</a><br/>
+
+
 </body>
 </html>

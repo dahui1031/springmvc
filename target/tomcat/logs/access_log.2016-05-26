@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:02:01 +0800] "GET /freemarker/hi HTTP/1.1" 404 5 http-bio-8080-exec-1 693
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:02:52 +0800] "GET /freemarker/hi HTTP/1.1" 404 5 http-bio-8080-exec-2 11
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:06:17 +0800] "GET /hello HTTP/1.1" 200 318 http-bio-8080-exec-1 4777
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:06:22 +0800] "GET /freeMarker/hi HTTP/1.1" 200 91 http-bio-8080-exec-2 1992
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:07:34 +0800] "GET /freeMarker/hi HTTP/1.1" 200 91 http-bio-8080-exec-4 22
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:08:16 +0800] "GET /freeMarker/hi HTTP/1.1" 200 91 http-bio-8080-exec-1 3316
+0:0:0:0:0:0:0:1 - - [26/May/2016:17:42:32 +0800] "GET /freeMarker/hi HTTP/1.1" 200 124 http-bio-8080-exec-1 3199

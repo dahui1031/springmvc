@@ -8,12 +8,14 @@
  */ 
 package com.jack.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jack.model.Department;
@@ -47,10 +49,27 @@ public class DepartmentController {
     
     @RequestMapping(value="hello")
     public String toLoginPage(){
-    	List<Student> stu=studentService.list(1);
-    	System.out.println(stu.get(0).getDepartment().getDepartCode()+".........................");
+    	//List<Student> stu=studentService.list(1);
+    	//System.out.println(stu.get(0).getDepartment().getDepartCode()+".........................");
     	return "hello";
     }
+    
+    @RequestMapping("freeMarker/hi")
+    public String sayHello(ModelMap map) {
+        System.out.println("say Hello ……");
+        map.addAttribute("name", " World!");
+        ArrayList list=new ArrayList<Department>();
+        Department department=new Department();
+		department.setDepartCode("A008");
+		department.setDepartName("索隆部");
+		list.add(department);
+		Department department1=new Department();
+		department1.setDepartCode("A009");
+		department1.setDepartName("海鲜部");
+		list.add(department1);
+		map.addAttribute("list", list);
+        return "/hello.ftl";
 
+    }
     
 }
