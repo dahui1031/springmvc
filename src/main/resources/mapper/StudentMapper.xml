@@ -16,7 +16,9 @@
        from student s,
        department d
        where s.departid=d.id
+       <if test="id!=null">
        and d.id=#{id}
+       </if>
     </select>   
     <insert id="insertStudent">
        insert into student(departid,name,sex,birthday) 

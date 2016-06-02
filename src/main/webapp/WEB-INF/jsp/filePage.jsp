@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-      <a href="freeMarker/hi">say hi</a><br/>
-
-
+   <h1>Please upload a file</h1>
+	<form method="post" action="/upload" enctype="multipart/form-data">
+	    <input type="file" name="file"/>
+	    <input type="submit"/>
+	</form>
 </body>
 </html>

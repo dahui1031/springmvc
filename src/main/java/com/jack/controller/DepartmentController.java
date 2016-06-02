@@ -9,17 +9,20 @@
 package com.jack.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.jack.common.file.FileUp;
 import com.jack.model.Department;
-import com.jack.model.Student;
 import com.jack.service.DepartmentService;
 import com.jack.service.StudentService;
 
@@ -72,4 +75,36 @@ public class DepartmentController {
 
     }
     
+    @RequestMapping(value="/filepage")
+    public String filepage(){
+    	return "filePage";
+    }
+    
+    @RequestMapping(value="/upload")
+    public String upload(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    	MultipartHttpServletRequest multiHSRequest=(MultipartHttpServletRequest) request;
+    	//MultipartFile fpfiles =  multiHSRequest.getFile("file");
+    	CommonsMultipartFile fpfiles =  (CommonsMultipartFile) multiHSRequest.getFile("file");
+    	String filename=fpfiles.getOriginalFilename();
+    	FileItem fileItem=fpfiles.getFileItem();
+    	String filepath=fileItem.getName();
+    	
+    	//文件名字
+		String fileName = filepath.substring(filepath.lastIndexOf("\\")+1);   
+		System.out.println(fileName+"/////////////////////////");
+    	
+		String fileCode  ="";
+		String ext = "";
+		if(fileName.lastIndexOf(".")!=-1){
+			ext = fileName.substring(fileName.lastIndexOf("."));
+		}
+		
+		String uuid = "00000";
+		fileCode = uuid + ext;
+		
+		FileUp fileUp = new FileUp("upload", fileCode, fileItem.getInputStream());
+		fileUp.upload();
+		System.out.println(fileCode+"_______________________________");
+    	return "success";
+    }
 }

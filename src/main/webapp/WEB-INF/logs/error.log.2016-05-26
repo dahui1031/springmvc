@@ -1,0 +1,48 @@
+2016-05-26 16:58:26 [ localhost-startStop-1:2327 ] - [ ERROR ] maxIdle is deprecated
+2016-05-26 16:58:29 [ localhost-startStop-1:4727 ] - [ ERROR ] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'freemarkerConfiguration' defined in class path resource [conf/spring-mvc.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/freemarker.properties]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1578)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:753)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/freemarker.properties]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:153)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.beans.factory.config.PropertiesFactoryBean.createProperties(PropertiesFactoryBean.java:102)
+	at org.springframework.beans.factory.config.PropertiesFactoryBean.afterPropertiesSet(PropertiesFactoryBean.java:71)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	... 29 more
+2016-05-26 17:00:13 [ localhost-startStop-1:1986 ] - [ ERROR ] maxIdle is deprecated
+2016-05-26 17:05:50 [ localhost-startStop-1:1482 ] - [ ERROR ] maxIdle is deprecated
+2016-05-26 17:08:05 [ localhost-startStop-1:1596 ] - [ ERROR ] maxIdle is deprecated
+2016-05-26 17:42:14 [ localhost-startStop-1:1583 ] - [ ERROR ] maxIdle is deprecated
